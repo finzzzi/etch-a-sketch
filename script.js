@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
 const gridSize = 16;
-const squareSize = 960 / gridSize;
+const squareSize = 720 / gridSize;
 
 for  (let i = 0; i < gridSize * gridSize; i++) {
     const square = document.createElement("div");
@@ -9,3 +9,11 @@ for  (let i = 0; i < gridSize * gridSize; i++) {
     square.style.height = `${squareSize}px`;
     container.appendChild(square);
 }
+
+const squares = document.querySelectorAll(".square");
+
+squares.forEach((square) => {
+    square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = "black";
+    });
+});
