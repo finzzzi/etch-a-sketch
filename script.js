@@ -1,4 +1,7 @@
+// DOM elements
 const container = document.querySelector("#container");
+
+
 const gridSize = 16;
 const squareSize = 720 / gridSize;
 
@@ -16,4 +19,12 @@ squares.forEach((square) => {
     square.addEventListener('mouseover', () => {
         square.style.backgroundColor = "black";
     });
+});
+
+const resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener('click', () => {
+    squares.forEach((square) => {
+        square.style.backgroundColor = "";
+    })
 });
