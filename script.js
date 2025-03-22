@@ -21,13 +21,17 @@ function createGrid(size) {
     }
 }
 
-// Function to make hovered squares color into black.
+// Function to make hovered squares change color into random RGB
 function addHoverEffect() {
     const squares = document.querySelectorAll(".square");
 
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = "black";
+            const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+            const r = randomBetween(0, 255);
+            const g = randomBetween(0, 255);
+            const b = randomBetween(0, 255);
+            square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         });
     });
 }
