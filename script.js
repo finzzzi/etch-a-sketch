@@ -3,9 +3,11 @@ const container = document.querySelector(".container");
 
 let gridSize = 16;
 
+// Function to make squares per side based on given size
 function createGrid(size) {
     let squareSize = 720 / size;
 
+    // Deletes the grid divs
     container.innerHTML = "";
 
     for  (let i = 0; i < size * size; i++) {
@@ -19,6 +21,7 @@ function createGrid(size) {
     }
 }
 
+// Function to make hovered squares color into black.
 function addHoverEffect() {
     const squares = document.querySelectorAll(".square");
 
@@ -29,6 +32,7 @@ function addHoverEffect() {
     });
 }
 
+// Function to reset the colored squares
 function resetGrid() {
     const squares = document.querySelectorAll(".square");
     
@@ -37,12 +41,14 @@ function resetGrid() {
     });
 }
 
+// Event listener for "Reset" button
 const resetButton = document.querySelector(".reset-button");
 resetButton.addEventListener("click", resetGrid);
 
 
 const newGridButton = document.querySelector(".new-grid-button");
 
+// Event listener for "New Grid" button
 newGridButton.addEventListener("click", () => {
     const newSize = prompt("Enter a new number of squares per side (max 100):");
 
